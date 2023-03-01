@@ -9,7 +9,10 @@ import {IPokemonsList} from '~/components/PokemonsList/data/interfaces';
 import {RootState, useSelector, useDispatch} from '~/utils';
 import {pokemonsFetch} from '~/redux/reducers/Pokemon';
 import {pokemonDetailsSetColor} from '~/redux/reducers/PokemonDetail';
-import {pokemonDetailsFetch} from '~/redux/reducers/PokemonDetail';
+import {
+  pokemonDetailsFetch,
+  pokemonDetailsClean,
+} from '~/redux/reducers/PokemonDetail';
 import {PokemonCard} from '~/components/PokemonCard';
 
 export const usePokemonsList = (): IPokemonsList.Model => {
@@ -31,12 +34,10 @@ export const usePokemonsList = (): IPokemonsList.Model => {
   }
 
   function selectedPokemon(pokemonUrl: string) {
-    const teste = pokemonsState.find(item => item.details === pokemonUrl)
+    dispatch(pokemonDetailsClean());
+    const color = pokemonsState.find(item => item.details === pokemonUrl)
       ?.types[0].type.name;
-
-    console.log({teste});
-
-    dispatch(pokemonDetailsSetColor(teste));
+    dispatch(pokemonDetailsSetColor(color));
     dispatch(pokemonDetailsFetch(pokemonUrl));
     return navigate('PokemonDetails');
   }

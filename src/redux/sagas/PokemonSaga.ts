@@ -16,12 +16,6 @@ import {
 const GetPokemonsInstance = new GetPokemons(AxiosHttpClient);
 const GetPokemonDetailsInstance = new GetPokemonDetails(AxiosHttpClient);
 
-const delayToDispatch = (callback: () => {}) => {
-  return setTimeout(() => {
-    callback();
-  }, 2000);
-};
-
 const pokemonsDetails = async (pokemons: ISimplePokemon[]) =>
   await Promise.all(
     pokemons.map(async (pokemon: ISimplePokemon) => {
@@ -61,6 +55,8 @@ function* getPokemonDetails(action: any) {
     yield GetPokemonDetailsInstance.send({
       pokemonUrl,
     });
+
+  console.log(data);
 
   yield delay(2000);
 

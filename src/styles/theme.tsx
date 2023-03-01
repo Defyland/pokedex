@@ -22,7 +22,7 @@ export const theme = {
     rock: '#B8A038',
     bug: '#A8B820',
     ghost: '#705898',
-    steel: '#B8B8D0',
+    steel: '#4f4f6f',
     fire: '#FA6C6C',
     water: '#6890F0',
     grass: '#48CFB2',

@@ -1,6 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {IGetPokemonDetailsFullRequest} from '~/data/models';
 import {theme} from '~/styles/theme';
+import {pokemonDetailsMock} from '~/@mocks/pokemonDetails';
 
 interface IPokemonDetailState {
   color: keyof typeof theme.colors;
@@ -9,7 +10,7 @@ interface IPokemonDetailState {
 }
 
 const initialState: IPokemonDetailState = {
-  pokemonDetails: {} as IGetPokemonDetailsFullRequest,
+  pokemonDetails: pokemonDetailsMock,
   isLoading: true,
   color: 'white',
 };
@@ -32,6 +33,13 @@ const PokemonDetail = createSlice({
         isLoading: false,
       };
     },
+    pokemonDetailsClean: _state => {
+      return {
+        pokemonDetails: {} as IGetPokemonDetailsFullRequest,
+        isLoading: true,
+        color: 'white',
+      };
+    },
   },
 });
 
@@ -39,6 +47,7 @@ export const {
   pokemonDetailsFetch,
   pokemonDetailsSuccess,
   pokemonDetailsError,
+  pokemonDetailsClean,
   pokemonDetailsSetColor,
 } = PokemonDetail.actions;
 
