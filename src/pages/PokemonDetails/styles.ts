@@ -1,11 +1,8 @@
 import styled from 'styled-components/native';
 import {Page, Wrapped} from '~/components/Basics';
-import {IPokemonDetails} from '~/pages/PokemonDetails/data/interfaces';
 
 export default {
-  Container: styled(Page).attrs({
-    hasScroll: false,
-  })`
+  Container: styled(Page).attrs({})`
     flex: 1;
   `,
   ContentLoading: styled(Wrapped)`

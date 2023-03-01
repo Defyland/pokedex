@@ -1,6 +1,10 @@
 import * as React from 'react';
-import {PokeballLoading, PokemonDetailsHeader} from '~/components';
 import {usePokemonDetails} from '~/pages/PokemonDetails/data/model';
+import {
+  PokeballLoading,
+  PokemonDetailsHeader,
+  PokemonDetailsInfos,
+} from '~/components';
 import S from './styles';
 
 export const PokemonDetails = () => {
@@ -17,6 +21,7 @@ export const PokemonDetails = () => {
   return (
     <S.Container bg={'grass'}>
       <PokemonDetailsHeader {...{goBack}} />
+      <PokemonDetailsInfos />
     </S.Container>
   );
 };

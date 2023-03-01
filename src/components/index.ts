@@ -5,4 +5,5 @@ export * from './PokemonCard';
 export * from './PokeballBackground';
 export * from './PokeballLoading';
 export * from './PokemonDetailsHeader';
+export * from './PokemonDetailsInfos';
 // Import component here
