@@ -56,8 +56,6 @@ function* getPokemonDetails(action: any) {
       pokemonUrl,
     });
 
-  console.log(data);
-
   yield delay(2000);
 
   yield put(

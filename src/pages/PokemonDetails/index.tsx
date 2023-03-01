@@ -15,7 +15,7 @@ export const PokemonDetails = () => {
   // }
 
   return (
-    <S.Container bg={'psychic'}>
+    <S.Container bg={'grass'}>
       <PokemonDetailsHeader {...{goBack}} />
     </S.Container>
   );
