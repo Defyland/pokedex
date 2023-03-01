@@ -1,0 +1,73 @@
+import * as React from 'react';
+import {useCallback} from 'react';
+import {ListRenderItemInfo} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import escapeRegExp from 'escape-string-regexp';
+
+import {IPokemonList as IPokemonListItem} from '~/data/models';
+import {IPokemonsList} from '~/components/PokemonsList/data/interfaces';
+import {RootState, useSelector, useDispatch} from '~/utils';
+import {pokemonsFetch} from '~/redux/reducers/Pokemon';
+import {pokemonDetailsSetColor} from '~/redux/reducers/PokemonDetail';
+import {pokemonDetailsFetch} from '~/redux/reducers/PokemonDetail';
+import {PokemonCard} from '~/components/PokemonCard';
+
+export const usePokemonsList = (): IPokemonsList.Model => {
+  const {
+    Pokemon: {pokemons: pokemonsState, next, isLoading},
+    Search: {query},
+  } = useSelector((state: RootState) => state);
+
+  const {navigate} = useNavigation();
+
+  const dispatch = useDispatch();
+
+  function updatePokemons() {
+    return dispatch(
+      pokemonsFetch({
+        url: next,
+      })
+    );
+  }
+
+  function selectedPokemon(pokemonUrl: string) {
+    const teste = pokemonsState.find(item => item.details === pokemonUrl)
+      ?.types[0].type.name;
+
+    console.log({teste});
+
+    dispatch(pokemonDetailsSetColor(teste));
+    dispatch(pokemonDetailsFetch(pokemonUrl));
+    return navigate('PokemonDetails');
+  }
+
+  const keyExtractor = useCallback(
+    (item: IPokemonListItem, index: number) => `${item.name}-${index}`,
+    []
+  );
+
+  const renderItem = useCallback(
+    ({item}: ListRenderItemInfo<IPokemonListItem>) => (
+      <PokemonCard pokemon={item} selectedPokemon={selectedPokemon} />
+    ),
+    []
+  );
+
+  const match = new RegExp(escapeRegExp(query.trim().toLowerCase()));
+
+  const pokemons = pokemonsState;
+
+  const searchPokemons = pokemonsState.filter(pokemon => {
+    return match.test(pokemon.name);
+  });
+
+  return {
+    query,
+    pokemons,
+    isLoading,
+    renderItem,
+    keyExtractor,
+    updatePokemons,
+    searchPokemons,
+  };
+};
