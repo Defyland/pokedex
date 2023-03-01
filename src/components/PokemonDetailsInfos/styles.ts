@@ -21,7 +21,7 @@ export default {
   `,
   Pokeball: styled(PokeballBackground).attrs({size: pokeballWidth})``,
   Title: styled.Text`
-    margin: 16px;
+    margin: ${({theme}) => theme.space[2]}px;
     text-align: center;
     font-weight: bold;
     text-transform: capitalize;
@@ -94,13 +94,13 @@ export default {
   `,
   StatsInfo: styled.Text`
     text-align: center;
-    margin-right: 16px;
+    margin-right: ${({theme}) => theme.space[2]}px;
     text-transform: capitalize;
     color: ${({theme}) => theme.colors.white};
     font-size: ${({theme}) => theme.fontSizes.tiny};
   `,
   StatusBar: styled(Wrapped)`
-    height: 8px;
+    height: ${({theme}) => theme.space[1]}px;
     border-radius: 4px;
     background-color: ${({theme}) => theme.colors.white};
   `,

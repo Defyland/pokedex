@@ -13,8 +13,7 @@ const Backpack = createSlice({
   initialState,
   reducers: {
     setPokemonOnBackpack: (state, {payload}) => {
-      const newPokemons = [...state.pokemons, payload];
-      return {...state, pokemons: newPokemons};
+      return {...state, pokemons: payload};
     },
   },
 });

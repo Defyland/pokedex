@@ -8,7 +8,8 @@ import {
 import S from './styles';
 
 export const PokemonDetails = () => {
-  const {isLoading, bgColor, goBack, catchPokemon} = usePokemonDetails();
+  const {isLoading, bgColor, goBack, catchPokemon, dropPokemon, canCapture} =
+    usePokemonDetails();
 
   if (isLoading) {
     return (
@@ -22,8 +23,10 @@ export const PokemonDetails = () => {
     <S.Container bg={bgColor}>
       <PokemonDetailsHeader {...{goBack}} />
       <PokemonDetailsInfos />
-      <S.Button onPress={catchPokemon}>
-        <S.ButtonTitle>{`catch`}</S.ButtonTitle>
+      <S.Button onPress={canCapture ? catchPokemon : dropPokemon}>
+        <S.ButtonTitle color={bgColor}>
+          {canCapture ? `catch` : `drop`}
+        </S.ButtonTitle>
       </S.Button>
     </S.Container>
   );

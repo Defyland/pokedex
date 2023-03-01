@@ -1,6 +1,4 @@
 import * as React from 'react';
-import {PokeballBackground} from '~/components/PokeballBackground';
-import {IPokemonDetailsInfos} from '~/components/PokemonDetailsInfos/data/interfaces';
 import {usePokemonDetailsInfos} from '~/components/PokemonDetailsInfos/data/model';
 import S from './styles';
 

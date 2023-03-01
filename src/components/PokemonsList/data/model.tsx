@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useCallback} from 'react';
+import {useCallback, useState} from 'react';
 import {ListRenderItemInfo} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import escapeRegExp from 'escape-string-regexp';
@@ -17,9 +17,12 @@ import {PokemonCard} from '~/components/PokemonCard';
 
 export const usePokemonsList = (): IPokemonsList.Model => {
   const {
+    Backpack: {pokemons: backpackPokemons},
     Pokemon: {pokemons: pokemonsState, next, isLoading},
     Search: {query},
   } = useSelector((state: RootState) => state);
+
+  const [filter, setFilter] = useState<'all' | 'catchs'>('all');
 
   const {navigate} = useNavigation();
 
@@ -63,11 +66,14 @@ export const usePokemonsList = (): IPokemonsList.Model => {
 
   return {
     query,
+    filter,
     pokemons,
+    setFilter,
     isLoading,
     renderItem,
     keyExtractor,
     updatePokemons,
     searchPokemons,
+    backpackPokemons,
   };
 };

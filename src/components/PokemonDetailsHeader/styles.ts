@@ -6,7 +6,7 @@ const pokemonSize = metrics.width / 3;
 
 export default {
   Container: styled(Wrapped)``,
-  Content: styled(Wrapped).attrs({})`
+  Content: styled(Wrapped)`
     flex-direction: row;
   `,
   Infos: styled.View`

@@ -8,7 +8,10 @@ export namespace IPokemonsList {
   export interface Model {
     query: string;
     isLoading: boolean;
+    filter: 'all' | 'catchs';
+    setFilter: React.Dispatch<React.SetStateAction<'all' | 'catchs'>>;
     pokemons: IPokemonList[];
+    backpackPokemons: IPokemonList[];
     updatePokemons: () => void;
     searchPokemons: IPokemonList[];
     keyExtractor: (item: IPokemonListItem, index: number) => string;

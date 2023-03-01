@@ -8,9 +8,11 @@ export namespace IPokemonDetails {
   export interface ModelProps {}
   export interface Model {
     catchPokemon: () => void;
+    dropPokemon: () => void;
     goBack: () => void;
     bgColor: IColorsKey;
     isLoading: boolean;
+    canCapture: boolean;
   }
   export interface Container {
     color: IColorsKey;

@@ -2,12 +2,13 @@ import styled from 'styled-components/native';
 
 export default {
   Container: styled.View`
-    margin-bottom: 8px;
-    margin: 0px 8px 8px 8px;
+    margin-bottom: ${({theme}) => theme.space[1]}px;
+    margin: 0px ${({theme}) => theme.space[1]}px
+      ${({theme}) => theme.space[1]}px ${({theme}) => theme.space[1]}px;
   `,
   Title: styled.Text`
-    margin-bottom: 16px;
-    font-size: 32px;
+    margin-bottom: ${({theme}) => theme.space[2]}px;
+    font-size: ${({theme}) => theme.space[4]}px;
     font-weight: bold;
     text-transform: capitalize;
   `,

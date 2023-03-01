@@ -15,7 +15,7 @@ export default {
     m: 0,
   })`
     height: ${cardWidth}px;
-    border-radius: 8px;
+    border-radius: ${({theme}) => theme.space[1]}px;
     flex: 1;
   `,
   Container: styled(Wrapped)`
@@ -45,30 +45,30 @@ export default {
   Line: styled.View`
     flex-direction: row;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: ${({theme}) => theme.space[1]}px;
   `,
   Number: styled.Text`
-    font-size: 10px;
+    font-size: ${({theme}) => theme.fontSizes.tiny};
     font-weight: bold;
     color: ${({theme}) => theme.colors.white};
   `,
   Type: styled.Text`
-    font-size: 11px;
+    font-size: ${({theme}) => theme.fontSizes.small};
     color: ${({theme}) => theme.colors.white};
     text-transform: capitalize;
   `,
   TypeContent: styled.View`
     width: 50%;
-    padding: 4px 0px;
+    padding: ${({theme}) => theme.space[0]}px 0px;
     border-radius: 100px;
-    margin-bottom: 4px;
+    margin-bottom: ${({theme}) => theme.space[0]}px;
     background-color: ${({theme}) => theme.colors.white};
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.2);
   `,
   Infos: styled.View`
-    padding: 8px;
+    padding: ${({theme}) => theme.space[1]}px;
     width: 60%;
     height: 100%;
     position: absolute;

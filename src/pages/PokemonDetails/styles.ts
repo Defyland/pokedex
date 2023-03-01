@@ -1,3 +1,4 @@
+// @ts-nocheck
 import styled from 'styled-components/native';
 import {Page, Wrapped} from '~/components/Basics';
 
@@ -20,11 +21,11 @@ export default {
     border-radius: ${({theme}) => theme.space[1]}px;
     background-color: ${({theme}) => theme.colors.white};
   `,
-  ButtonTitle: styled.Text`
+  ButtonTitle: styled.Text<{color: string}>`
     font-weight: bold;
     text-align: center;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.fire};
+    color: ${({theme, color}) => theme.colors[color]};
     font-size: ${({theme}) => theme.fontSizes.big};
   `,
 };

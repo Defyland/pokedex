@@ -9,23 +9,39 @@ export const usePokemonDetails = (): IPokemonDetails.Model => {
 
   const {
     Backpack: {pokemons},
-    PokemonDetail: {isLoading, color: bgColor},
+    Pokemon: {pokemons: simplePokemons},
+    PokemonDetail: {pokemonDetails, isLoading, color: bgColor},
   } = useSelector((state: RootState) => state);
 
   function goBack() {
     return navigate.goBack();
   }
 
-  console.log({pokemons});
+  const canCapture = !Boolean(
+    pokemons.find(pokemon => pokemon.id === pokemonDetails.id)
+  );
 
   function catchPokemon() {
-    return dispatch(setPokemonOnBackpack('renan'));
+    const pokemonToSave = simplePokemons.find(
+      pokemon => pokemon.id === pokemonDetails.id
+    );
+    const newPokemons = [...pokemons, pokemonToSave];
+    return dispatch(setPokemonOnBackpack(newPokemons));
+  }
+
+  function dropPokemon() {
+    const pokemonToSave = pokemons.filter(
+      pokemon => pokemon.id !== pokemonDetails.id
+    );
+    return dispatch(setPokemonOnBackpack(pokemonToSave));
   }
 
   return {
     goBack,
     bgColor,
     isLoading,
+    canCapture,
     catchPokemon,
+    dropPokemon,
   };
 };
