@@ -10,7 +10,6 @@ export namespace IPokemonDetails {
     goBack: () => void;
     bgColor: IColorsKey;
     isLoading: boolean;
-    pokemonDetails: IGetPokemonDetailsFullRequest;
   }
   export interface Container {
     color: IColorsKey;

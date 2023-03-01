@@ -9,9 +9,9 @@ export namespace IPokemonsList {
     query: string;
     isLoading: boolean;
     pokemons: IPokemonList[];
-    searchPokemons: IPokemonList[];
-    renderItem: ({item}: ListRenderItemInfo<IPokemonListItem>) => JSX.Element;
-    keyExtractor: (item: IPokemonListItem, index: number) => string;
     updatePokemons: () => void;
+    searchPokemons: IPokemonList[];
+    keyExtractor: (item: IPokemonListItem, index: number) => string;
+    renderItem: ({item}: ListRenderItemInfo<IPokemonListItem>) => JSX.Element;
   }
 }

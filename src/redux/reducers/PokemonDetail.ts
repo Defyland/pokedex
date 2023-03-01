@@ -1,7 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {IGetPokemonDetailsFullRequest} from '~/data/models';
 import {theme} from '~/styles/theme';
-import {pokemonDetailsMock} from '~/@mocks/pokemonDetails';
 
 interface IPokemonDetailState {
   color: keyof typeof theme.colors;
@@ -10,7 +9,7 @@ interface IPokemonDetailState {
 }
 
 const initialState: IPokemonDetailState = {
-  pokemonDetails: pokemonDetailsMock,
+  pokemonDetails: {} as IGetPokemonDetailsFullRequest,
   isLoading: true,
   color: 'white',
 };

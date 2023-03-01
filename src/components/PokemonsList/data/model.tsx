@@ -33,12 +33,11 @@ export const usePokemonsList = (): IPokemonsList.Model => {
     );
   }
 
-  function selectedPokemon(pokemonUrl: string) {
+  function selectedPokemon(pokemon: IPokemonListItem) {
     dispatch(pokemonDetailsClean());
-    const color = pokemonsState.find(item => item.details === pokemonUrl)
-      ?.types[0].type.name;
+    const color = pokemon?.types[0].type.name;
     dispatch(pokemonDetailsSetColor(color));
-    dispatch(pokemonDetailsFetch(pokemonUrl));
+    dispatch(pokemonDetailsFetch(pokemon.details));
     return navigate('PokemonDetails');
   }
 

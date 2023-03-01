@@ -34,7 +34,7 @@ export const PokemonsList = () => {
           data={pokemons}
           extraData={pokemons}
           renderItem={renderItem}
-          onEndReachedThreshold={0.1}
+          onEndReachedThreshold={0.2}
           keyExtractor={keyExtractor}
           onEndReached={updatePokemons}
           ListFooterComponent={() => {

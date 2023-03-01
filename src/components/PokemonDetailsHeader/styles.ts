@@ -36,6 +36,7 @@ export default {
     font-size: ${({theme}) => theme.fontSizes.xsmall};
   `,
   Name: styled.Text`
+    margin-bottom: ${({theme}) => theme.space[2]}px;
     font-weight: bold;
     text-transform: capitalize;
     color: ${({theme}) => theme.colors.white};

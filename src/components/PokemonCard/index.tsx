@@ -8,7 +8,7 @@ export const PokemonCard = (props: IPokemonCard.View) => {
   const {pokemon, bgColor, selectedPokemon} = usePokemonCard(props);
   return (
     <S.Linear color={bgColor}>
-      <S.Press onPress={() => selectedPokemon(pokemon.details)}>
+      <S.Press onPress={() => selectedPokemon(pokemon)}>
         <S.Container>
           <S.Infos>
             <S.Line>

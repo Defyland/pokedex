@@ -7,7 +7,6 @@ export const usePokemonCard = (
   const {pokemon} = props;
   type IColors = typeof theme.colors;
   const bgColor = theme.colors[pokemon.types[0].type.name as keyof IColors];
-
   return {
     ...props,
     pokemon,

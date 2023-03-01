@@ -2,7 +2,7 @@ import {IPokemonList} from '~/data/models';
 
 export namespace IPokemonCard {
   export interface View {
-    selectedPokemon: (pokemonUrl: string) => void;
+    selectedPokemon: (pokemon: IPokemonList) => void;
     pokemon: IPokemonList;
   }
   export interface ModelProps extends View {}

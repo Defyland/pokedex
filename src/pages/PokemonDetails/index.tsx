@@ -8,18 +8,18 @@ import {
 import S from './styles';
 
 export const PokemonDetails = () => {
-  const {pokemonDetails, isLoading, bgColor, goBack} = usePokemonDetails();
+  const {isLoading, bgColor, goBack} = usePokemonDetails();
 
-  // if (isLoading) {
-  //   return (
-  //     <S.ContentLoading bg={bgColor}>
-  //       <PokeballLoading />
-  //     </S.ContentLoading>
-  //   );
-  // }
+  if (isLoading) {
+    return (
+      <S.ContentLoading bg={bgColor}>
+        <PokeballLoading />
+      </S.ContentLoading>
+    );
+  }
 
   return (
-    <S.Container bg={'grass'}>
+    <S.Container bg={bgColor}>
       <PokemonDetailsHeader {...{goBack}} />
       <PokemonDetailsInfos />
     </S.Container>

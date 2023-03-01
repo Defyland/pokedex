@@ -1,5 +1,9 @@
 import styled from 'styled-components/native';
+import {PokeballBackground} from '~/components/PokeballBackground';
 import {Wrapped} from '~/components/Basics';
+import {metrics} from '~/styles/metrics';
+
+const pokeballWidth = metrics.width;
 
 export default {
   Container: styled(Wrapped)`
@@ -8,6 +12,14 @@ export default {
   Content: styled(Wrapped)`
     flex: 1;
   `,
+  PokeballContent: styled(Wrapped)`
+    opacity: 0.6;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -${pokeballWidth / 2}px 0 0 -${pokeballWidth / 2}px;
+  `,
+  Pokeball: styled(PokeballBackground).attrs({size: pokeballWidth})``,
   Title: styled.Text`
     margin: 16px;
     text-align: center;
