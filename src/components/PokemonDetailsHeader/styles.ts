@@ -2,22 +2,17 @@ import styled from 'styled-components/native';
 import {Wrapped} from '~/components/Basics';
 import {metrics} from '~/styles/metrics';
 
-const pokemonSize = metrics.width / 2;
+const pokemonSize = metrics.width / 3;
 
 export default {
   Container: styled(Wrapped)``,
-  Content: styled(Wrapped).attrs({
-    mr: 1,
-    ml: 2,
-  })`
+  Content: styled(Wrapped).attrs({})`
     flex-direction: row;
   `,
   Infos: styled.View`
     flex: 1;
   `,
-  PokemonImage: styled(Wrapped)`
-    right: -20px;
-  `,
+  PokemonImage: styled(Wrapped)``,
   Image: styled.Image`
     width: ${pokemonSize}px;
     height: ${pokemonSize}px;

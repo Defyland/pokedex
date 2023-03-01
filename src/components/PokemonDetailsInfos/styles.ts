@@ -30,7 +30,6 @@ export default {
   `,
   AboutContainer: styled(Wrapped).attrs({
     mb: 2,
-    mx: 2,
   })`
     flex-direction: row;
     align-self: center;
@@ -60,7 +59,6 @@ export default {
   `,
   Stats: styled(Wrapped).attrs({
     mb: 2,
-    mx: 2,
   })`
     flex-direction: row;
     justify-content: space-between;
@@ -75,7 +73,6 @@ export default {
     border-radius: ${({theme}) => theme.space[0]}px;
   `,
   StatsContentInfos: styled(Wrapped).attrs({
-    mx: 0,
     center: true,
   })`
     flex: 2;

@@ -7,6 +7,7 @@ export namespace IPokemonDetails {
   export interface View {}
   export interface ModelProps {}
   export interface Model {
+    catchPokemon: () => void;
     goBack: () => void;
     bgColor: IColorsKey;
     isLoading: boolean;
