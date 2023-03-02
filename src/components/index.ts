@@ -6,4 +6,5 @@ export * from './PokeballBackground';
 export * from './PokeballLoading';
 export * from './PokemonDetailsHeader';
 export * from './PokemonDetailsInfos';
+export * from './Subheader';
 // Import component here

@@ -58,9 +58,9 @@ export const usePokemonsList = (): IPokemonsList.Model => {
 
   const match = new RegExp(escapeRegExp(query.trim().toLowerCase()));
 
-  const pokemons = pokemonsState;
+  const pokemons = filter === 'all' ? pokemonsState : backpackPokemons;
 
-  const searchPokemons = pokemonsState.filter(pokemon => {
+  const searchPokemons = pokemons.filter(pokemon => {
     return match.test(pokemon.name);
   });
 
