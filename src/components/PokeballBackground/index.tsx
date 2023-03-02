@@ -5,5 +5,11 @@ import S from './styles';
 
 export const PokeballBackground = (props: IPokeballBackground.View) => {
   const {color, size} = usePokeballBackground(props);
-  return <S.Image {...{size, color}} style={{tintColor: color}} />;
+  return (
+    <S.Image
+      testID="PokeballBackground"
+      {...{size, color}}
+      style={{tintColor: color}}
+    />
+  );
 };
