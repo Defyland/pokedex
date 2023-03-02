@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import {Wrapped} from '~/components/Basics';
 import {metrics} from '~/styles/metrics';
+import {theme} from '~/styles/theme';
 
 const pokemonSize = metrics.width / 3;
 
@@ -27,20 +28,20 @@ export default {
   Number: styled.Text`
     font-weight: bold;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.white};
-    font-size: ${({theme}) => theme.fontSizes.xsmall};
+    color: ${theme.colors.white};
+    font-size: ${theme.fontSizes.xsmall};
   `,
   Name: styled.Text`
-    margin-bottom: ${({theme}) => theme.space[2]}px;
+    margin-bottom: ${theme.space[2]}px;
     font-weight: bold;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.white};
-    font-size: ${({theme}) => theme.fontSizes.xlarge};
+    color: ${theme.colors.white};
+    font-size: ${theme.fontSizes.xlarge};
   `,
   Type: styled.Text`
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.white};
-    font-size: ${({theme}) => theme.fontSizes.small};
+    color: ${theme.colors.white};
+    font-size: ${theme.fontSizes.small};
   `,
   TypeContent: styled(Wrapped).attrs({
     py: 1,

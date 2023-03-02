@@ -5,7 +5,7 @@ import {ThemeProvider} from '~/styles/theme';
 
 jest.mock('axios', () => {
   return {
-    axiosReponse: {},
+    AxiosReponse: {},
   };
 });
 

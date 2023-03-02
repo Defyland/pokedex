@@ -8,10 +8,10 @@ export const PokemonDetailsHeader = (props: IPokemonDetailsHeader.View) => {
   const {pokemonDetails, goBack, pokemonImg} = usePokemonDetailsHeader(props);
 
   return (
-    <S.Container>
+    <S.Container testID="PokemonDetailsHeader">
       <S.Content>
         <S.Infos>
-          <S.BackButton onPress={goBack}>
+          <S.BackButton testID="PokemonDetailsHeader:Press" onPress={goBack}>
             <Icon
               size={30}
               name="arrow-back-sharp"
@@ -19,11 +19,15 @@ export const PokemonDetailsHeader = (props: IPokemonDetailsHeader.View) => {
               color="white"
             />
           </S.BackButton>
-          <S.Number>{`#${pokemonDetails.id}`}</S.Number>
-          <S.Name>{pokemonDetails.name}</S.Name>
+          <S.Number testID="PokemonDetailsHeader:Id">{`#${pokemonDetails.id}`}</S.Number>
+          <S.Name testID="PokemonDetailsHeader:Name">
+            {pokemonDetails.name}
+          </S.Name>
           {pokemonDetails.types.map((item, index) => (
             <S.TypeContent key={index}>
-              <S.Type>{item.type.name}</S.Type>
+              <S.Type testID="PokemonDetailsHeader:TypeName">
+                {item.type.name}
+              </S.Type>
             </S.TypeContent>
           ))}
         </S.Infos>

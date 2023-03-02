@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {render} from '@testing-library/react-native';
 import {PokeballBackground} from '~/components/PokeballBackground';
-import {ThemeProvider} from '~/styles/theme';
 
 describe('Render PokeballBackground', () => {
   it('Should be PokeballBackground exist', () => {
