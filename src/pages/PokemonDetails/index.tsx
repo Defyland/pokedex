@@ -20,10 +20,13 @@ export const PokemonDetails = () => {
   }
 
   return (
-    <S.Container bg={bgColor}>
+    <S.Container testID="PokemonDetails" bg={bgColor}>
       <PokemonDetailsHeader {...{goBack}} />
       <PokemonDetailsInfos />
-      <S.Button onPress={canCapture ? catchPokemon : dropPokemon}>
+      <S.Button
+        testID="PokemonDetails:Press"
+        onPress={canCapture ? catchPokemon : dropPokemon}
+      >
         <S.ButtonTitle color={bgColor}>
           {canCapture ? `catch` : `drop`}
         </S.ButtonTitle>
