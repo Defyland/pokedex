@@ -7,7 +7,7 @@ import S from './styles';
 export const Home = () => {
   const {showSplash} = useHome();
   return (
-    <S.Container>
+    <S.Container testID="Home">
       <Conditional render={showSplash}>
         <S.Content>
           <PokeballLoading size={200} />
