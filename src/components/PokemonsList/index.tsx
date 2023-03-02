@@ -43,6 +43,7 @@ export const PokemonsList = () => {
           data={searchPokemons}
           extraData={searchPokemons}
           renderItem={renderItem}
+          ListEmptyComponent={<S.Text>Not Fount</S.Text>}
           showsVerticalScrollIndicator={false}
         />
       </Conditional>
