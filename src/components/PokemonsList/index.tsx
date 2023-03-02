@@ -9,7 +9,6 @@ import S from './styles';
 
 export const PokemonsList = () => {
   const {
-    query,
     filter,
     setFilter,
     isLoading,
@@ -23,7 +22,7 @@ export const PokemonsList = () => {
     <S.Container testID="PokemonsList">
       <Header />
       <Subheader {...{filter, setFilter}} />
-      <Conditional render={query === '' && filter === 'all'}>
+      <Conditional render={filter === 'all'}>
         <S.List
           numColumns={2}
           data={searchPokemons}
@@ -43,7 +42,7 @@ export const PokemonsList = () => {
           data={searchPokemons}
           extraData={searchPokemons}
           renderItem={renderItem}
-          ListEmptyComponent={<S.Text>Not Fount</S.Text>}
+          ListEmptyComponent={<S.Text>Not Found</S.Text>}
           showsVerticalScrollIndicator={false}
         />
       </Conditional>

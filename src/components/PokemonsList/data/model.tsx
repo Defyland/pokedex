@@ -60,7 +60,7 @@ export const usePokemonsList = (): IPokemonsList.Model => {
 
   const pokemons = filter === 'all' ? pokemonsState : backpackPokemons;
 
-  const searchPokemons = pokemonsState.filter(pokemon => {
+  const searchPokemons = pokemons.filter(pokemon => {
     return match.test(pokemon.name);
   });
 
