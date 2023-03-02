@@ -14,9 +14,10 @@ export const useHome = (): IHome.Model => {
       })
     );
 
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 2000);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   return {
