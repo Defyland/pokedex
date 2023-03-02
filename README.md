@@ -1,35 +1,76 @@
-<p align="center" >
-  <p align="center" >
-    <a href="">
-      <img alt="react-native-gifted-chat" src="https://user-images.githubusercontent.com/22872282/77975177-b34a2900-72cf-11ea-845d-6e40ab6718d4.png" />
-    </a>
-  </p>
+# Pokedex Project
 
-<h3 align="center">
-  Template for React Native Projects
-</h3>
-<p align="center">
-  A solution for standardizing your project.
-</p>
+|                                               Lista de Pokemons                                               |                                             Detalhes sobre o pokemon                                             |
+| :-----------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
+| ![list](https://user-images.githubusercontent.com/2706523/222454539-972be18a-53f9-4306-b0e3-dda9ee13f803.png) | ![details](https://user-images.githubusercontent.com/2706523/222454630-f40adce7-8922-4041-aadd-d8f88d8cae75.png) |
 
-<p align="center">
-  <a title='License' href="https://github.com/FaridSafi/react-native-gifted-chat/blob/master/LICENSE" height="18">
-    <img src='https://img.shields.io/badge/license-MIT-blue.svg' />
-  </a>
-</p>
-<h3 align="center">
-  <a href="https://github.com/TheGipsyDanger">
-    Create by: TheGipsyDanger
-  </a>
-</h3>
+### Caracteristicas
 
-<p align="center" >
-  <a href="https://github.com/TheGipsyDanger">
-    <img alt="react-native-gifted-chat" src="https://user-images.githubusercontent.com/22872282/154741716-1b34cbf7-27d6-47dc-bcc1-407395baa1c2.png" />
-  </a>
-</p>
+- Arquitetura MVVM, com conceitos de Clean Architeture para frontend
+- Design System com Styled Component + Styled System
+- Redux + Redux saga
 
-#
+> Este projeto tem como finalidade mostrar todos os pokemons em uma lista paginada e permitir a visualização dos detalhes do mesmo.
+
+### Configurando ambiente
+
+##### Primeira etapa
+
+- [NodeJS guia de instalação](https://nodejs.org/en/download/package-manager/ 'Instalação')
+- [Homebrew para mac](https://brew.sh/index_pt-br 'Instalação')
+- [Chocolatey para Windows](https://chocolatey.org/ 'Instalação')
+- [ReactJs ](https://reactjs.org/docs/add-react-to-a-new-app.html 'Instalação')
+- [Yarn ](https://yarnpkg.com/lang/en/docs/install/#mac-stable 'Instalação') -[Expo](https://docs.expo.io/versions/latest/introduction/installation/)
+
+##### Segunda etapa
+
+Configurado o ambiente podemos seguir adiante.
+
+> Baixando o projeto
+
+```sh
+$ git clone https://github.com/Defyland/pokedex.git
+$ cd pokedex
+```
+
+##### Terceira etapa
+
+> Instalando dependências do projeto e executando o projeto.
+
+```sh
+$ yarn install
+$ yarn start - E escolher o device que gostaria de usar
+$ ou yarn ios ou yarn android
+```
+
+ou
+
+```sh
+$ npm install
+$ expo start
+```
+
+### Plugins
+
+Lista dos principais plugins utilizadas no projeto.
+
+- redux
+- react-redux
+- redux-saga
+- testing-library
+- styled-component
+- styled-system
+- expo
+
+### Testes automatizados
+
+Testes utilizados no desenvolvimento do projeto.
+
+- Jest / Testing-library react native
+
+### Generator utilizado
+
+> Este gerador foi criado para facilitar o desenvolvimento e a estruturação de novos projetos, além da manutenção de projetos ja existentes.
 
 #### The template was created so we can start the project faster. Unifying all the logic of the redux, in a single file like in duck pattern. We also have a template generator where we can create several components with only this command.
 
@@ -80,7 +121,6 @@ https://styled-components.com
 
 https://reacttraining.com/react-router/core/guides/quick-start
 
-
 ## You have a question?
 
-Please send email for the henriquebasshvf@gmail.com
+Please send email for the allanflaviosilva@gmail.com | henriquebasshvf@gmail.com
