@@ -48,12 +48,12 @@ export default {
     margin-bottom: ${({theme}) => theme.space[1]}px;
   `,
   Number: styled.Text`
-    font-size: ${({theme}) => theme.fontSizes.tiny};
+    font-size: ${({theme}) => theme.fontSizes.micro};
     font-weight: bold;
     color: ${({theme}) => theme.colors.white};
   `,
   Type: styled.Text`
-    font-size: ${({theme}) => theme.fontSizes.small};
+    font-size: ${({theme}) => theme.fontSizes.micro};
     color: ${({theme}) => theme.colors.white};
     text-transform: capitalize;
   `,

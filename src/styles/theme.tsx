@@ -5,6 +5,7 @@ import {withChildren} from '~/utils/interfaces/customTypes';
 export const theme = {
   space: [4, 8, 16, 24, 32, 40],
   fontSizes: {
+    micro: '9px',
     tiny: '12px',
     xsmall: '14px',
     small: '16px',
