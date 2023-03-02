@@ -50,9 +50,10 @@ export const usePokemonsList = (): IPokemonsList.Model => {
   );
 
   const renderItem = useCallback(
-    ({item}: ListRenderItemInfo<IPokemonListItem>) => (
-      <PokemonCard pokemon={item} selectedPokemon={selectedPokemon} />
-    ),
+    ({item}: ListRenderItemInfo<IPokemonListItem>) => {
+      item.id === 4 && console.log(JSON.stringify(item));
+      return <PokemonCard pokemon={item} selectedPokemon={selectedPokemon} />;
+    },
     []
   );
 

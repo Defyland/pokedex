@@ -7,17 +7,20 @@ import S from './styles';
 export const PokemonCard = (props: IPokemonCard.View) => {
   const {pokemon, bgColor, selectedPokemon} = usePokemonCard(props);
   return (
-    <S.Linear color={bgColor}>
-      <S.Press onPress={() => selectedPokemon(pokemon)}>
+    <S.Linear testID="PokemonCard" color={bgColor}>
+      <S.Press
+        testID="PokemonCard:Press"
+        onPress={() => selectedPokemon(pokemon)}
+      >
         <S.Container>
           <S.Infos>
             <S.Line>
-              <S.Name>{pokemon.name}</S.Name>
-              <S.Number>{` #${pokemon.id}`}</S.Number>
+              <S.Name testID="PokemonCard:Name">{pokemon.name}</S.Name>
+              <S.Number testID="PokemonCard:Id">{` #${pokemon.id}`}</S.Number>
             </S.Line>
             {pokemon.types.map((item, index) => (
               <S.TypeContent key={index}>
-                <S.Type>{item.type.name}</S.Type>
+                <S.Type testID="PokemonCard:TypeName">{item.type.name}</S.Type>
               </S.TypeContent>
             ))}
           </S.Infos>
@@ -25,7 +28,7 @@ export const PokemonCard = (props: IPokemonCard.View) => {
             <PokeballBackground size={60} />
           </S.Pokeball>
           <S.PokemonImage>
-            <S.Image source={{uri: pokemon.img}} />
+            <S.Image testID="PokemonCard:Image" source={{uri: pokemon.img}} />
           </S.PokemonImage>
         </S.Container>
       </S.Press>
