@@ -8,6 +8,14 @@ export const PokemonDetailsInfos = () => {
     <>
       <S.Container>
         <S.Content>
+          <S.Title>{`Groups`}</S.Title>
+          <S.AboutContainer>
+            {pokemonDetails.egg_groups.map(group => (
+              <S.AboutContent>
+                <S.AboutInfo>{`${group.name}`}</S.AboutInfo>
+              </S.AboutContent>
+            ))}
+          </S.AboutContainer>
           <S.Title>{`About`}</S.Title>
           <S.AboutContainer>
             <S.AboutContent>

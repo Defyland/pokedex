@@ -1,8 +1,16 @@
 import {put, takeEvery, delay} from 'redux-saga/effects';
 import {API_IMAGE_URL} from '~/configs/constants';
 import {AxiosHttpClient} from '~/utils/api';
-import {GetPokemons, GetPokemonDetails} from '~/data/useCases';
-import {IGetPokemons, IGetPokemonDetails} from '~/data/dataInterfaces';
+import {
+  GetPokemons,
+  GetPokemonDetails,
+  GetPokemonSpeciesDetail,
+} from '~/data/useCases';
+import {
+  IGetPokemons,
+  IGetPokemonDetails,
+  IGetPokemonSpeciesDetail,
+} from '~/data/dataInterfaces';
 import {ISimplePokemon} from '~/data/models';
 import {
   pokemonsFetchSuccess,
@@ -15,6 +23,7 @@ import {
 
 const GetPokemonsInstance = new GetPokemons(AxiosHttpClient);
 const GetPokemonDetailsInstance = new GetPokemonDetails(AxiosHttpClient);
+const GetPokemonSpeciesInstance = new GetPokemonSpeciesDetail(AxiosHttpClient);
 
 const pokemonsDetails = async (pokemons: ISimplePokemon[]) =>
   await Promise.all(
@@ -55,6 +64,13 @@ function* getPokemonDetails(action: any) {
     yield GetPokemonDetailsInstance.send({
       pokemonUrl,
     });
+
+  const {data: dataSpecies}: IGetPokemonSpeciesDetail.Response =
+    yield GetPokemonSpeciesInstance.send({
+      id: data.id,
+    });
+
+  data.egg_groups = dataSpecies.egg_groups;
 
   yield delay(2000);
 

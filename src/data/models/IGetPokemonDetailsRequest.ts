@@ -1,10 +1,14 @@
+import {IGetPokemonSpeciesDetailRequest} from '~/data/models/IGetPokemonSpeciesDetailRequest';
+
 export interface IGetPokemonDetailsRequest {
   id: number;
   types: IType[];
   img: string;
 }
 
-export interface IGetPokemonDetailsFullRequest extends IFullPokemon {}
+export interface IGetPokemonDetailsFullRequest
+  extends IFullPokemon,
+    IGetPokemonSpeciesDetailRequest {}
 
 export interface ITypeDefinition {
   name: string;
