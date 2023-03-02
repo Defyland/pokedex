@@ -6,12 +6,12 @@ export const PokemonDetailsInfos = () => {
   const {pokemonDetails} = usePokemonDetailsInfos();
   return (
     <>
-      <S.Container>
+      <S.Container testID="PokemonDetailsInfos">
         <S.Content>
           <S.Title>{`Groups`}</S.Title>
           <S.AboutContainer>
             {pokemonDetails.egg_groups.map(group => (
-              <S.AboutContent>
+              <S.AboutContent key={group.name}>
                 <S.AboutInfo>{`${group.name}`}</S.AboutInfo>
               </S.AboutContent>
             ))}
@@ -19,15 +19,15 @@ export const PokemonDetailsInfos = () => {
           <S.Title>{`About`}</S.Title>
           <S.AboutContainer>
             <S.AboutContent>
-              <S.AboutInfo>{`${pokemonDetails.weight} kg`}</S.AboutInfo>
+              <S.AboutInfo testID="PokemonDetailsInfos:Weight">{`${pokemonDetails.weight} kg`}</S.AboutInfo>
               <S.AboutInfoTitle>{`Weight`}</S.AboutInfoTitle>
             </S.AboutContent>
             <S.AboutContent>
-              <S.AboutInfo>{`${pokemonDetails.height} m`}</S.AboutInfo>
+              <S.AboutInfo testID="PokemonDetailsInfos:Height">{`${pokemonDetails.height} m`}</S.AboutInfo>
               <S.AboutInfoTitle>{`Height`}</S.AboutInfoTitle>
             </S.AboutContent>
             <S.AboutContent>
-              <S.AboutInfo>{`${pokemonDetails.moves[0].move.name}`}</S.AboutInfo>
+              <S.AboutInfo testID="PokemonDetailsInfos:Move">{`${pokemonDetails.moves[0].move.name}`}</S.AboutInfo>
               <S.AboutInfoTitle>{`Move`}</S.AboutInfoTitle>
             </S.AboutContent>
           </S.AboutContainer>
@@ -35,11 +35,15 @@ export const PokemonDetailsInfos = () => {
           {pokemonDetails.stats.map((item, index) => (
             <S.Stats key={index}>
               <S.StatsContentName>
-                <S.StatsInfoBold>{item.stat.name}</S.StatsInfoBold>
+                <S.StatsInfoBold testID="PokemonDetailsInfos:Stats:Name">
+                  {item.stat.name}
+                </S.StatsInfoBold>
               </S.StatsContentName>
               <S.StatsContentInfos>
                 <S.StatsContentInfosDistribution>
-                  <S.StatsInfo>{item.base_stat}</S.StatsInfo>
+                  <S.StatsInfo testID="PokemonDetailsInfos:Stats:Infos">
+                    {item.base_stat}
+                  </S.StatsInfo>
                   <S.StatusBar width={item.base_stat} />
                 </S.StatsContentInfosDistribution>
               </S.StatsContentInfos>

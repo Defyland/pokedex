@@ -1,4 +1,8 @@
 export const pokemonDetailsMock = {
+  egg_groups: [
+    {name: 'monster', url: 'https://pokeapi.co/api/v2/egg-group/1/'},
+    {name: 'plant', url: 'https://pokeapi.co/api/v2/egg-group/7/'},
+  ],
   abilities: [
     {
       ability: {

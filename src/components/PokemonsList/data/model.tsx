@@ -50,10 +50,9 @@ export const usePokemonsList = (): IPokemonsList.Model => {
   );
 
   const renderItem = useCallback(
-    ({item}: ListRenderItemInfo<IPokemonListItem>) => {
-      item.id === 4 && console.log(JSON.stringify(item));
-      return <PokemonCard pokemon={item} selectedPokemon={selectedPokemon} />;
-    },
+    ({item}: ListRenderItemInfo<IPokemonListItem>) => (
+      <PokemonCard pokemon={item} selectedPokemon={selectedPokemon} />
+    ),
     []
   );
 
@@ -61,7 +60,7 @@ export const usePokemonsList = (): IPokemonsList.Model => {
 
   const pokemons = filter === 'all' ? pokemonsState : backpackPokemons;
 
-  const searchPokemons = pokemons.filter(pokemon => {
+  const searchPokemons = pokemonsState.filter(pokemon => {
     return match.test(pokemon.name);
   });
 

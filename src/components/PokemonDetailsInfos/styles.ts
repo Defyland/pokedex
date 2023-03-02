@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import {PokeballBackground} from '~/components/PokeballBackground';
 import {Wrapped} from '~/components/Basics';
 import {metrics} from '~/styles/metrics';
+import {theme} from '~/styles/theme';
 
 const pokeballWidth = metrics.width;
 
@@ -21,12 +22,12 @@ export default {
   `,
   Pokeball: styled(PokeballBackground).attrs({size: pokeballWidth})``,
   Title: styled.Text`
-    margin: ${({theme}) => theme.space[2]}px;
+    margin: ${theme.space[2]}px;
     text-align: center;
     font-weight: bold;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.white};
-    font-size: ${({theme}) => theme.fontSizes.large};
+    color: ${theme.colors.white};
+    font-size: ${theme.fontSizes.large};
   `,
   AboutContainer: styled(Wrapped).attrs({
     mb: 2,
@@ -42,20 +43,20 @@ export default {
     height: 44px;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: ${({theme}) => theme.space[0]}px;
+    border-radius: ${theme.space[0]}px;
   `,
   AboutInfoTitle: styled.Text`
     font-weight: bold;
     text-align: center;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.white};
-    font-size: ${({theme}) => theme.fontSizes.tiny};
+    color: ${theme.colors.white};
+    font-size: ${theme.fontSizes.tiny};
   `,
   AboutInfo: styled.Text`
     text-align: center;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.white};
-    font-size: ${({theme}) => theme.fontSizes.tiny};
+    color: ${theme.colors.white};
+    font-size: ${theme.fontSizes.tiny};
   `,
   Stats: styled(Wrapped).attrs({
     mb: 2,
@@ -70,7 +71,7 @@ export default {
     height: 44px;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: ${({theme}) => theme.space[0]}px;
+    border-radius: ${theme.space[0]}px;
   `,
   StatsContentInfos: styled(Wrapped).attrs({
     center: true,
@@ -78,7 +79,7 @@ export default {
     flex: 2;
     height: 44px;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: ${({theme}) => theme.space[0]}px;
+    border-radius: ${theme.space[0]}px;
   `,
   StatsContentInfosDistribution: styled(Wrapped)`
     flex-direction: row;
@@ -89,19 +90,19 @@ export default {
     font-weight: bold;
     text-align: center;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.white};
-    font-size: ${({theme}) => theme.fontSizes.tiny};
+    color: ${theme.colors.white};
+    font-size: ${theme.fontSizes.tiny};
   `,
   StatsInfo: styled.Text`
     text-align: center;
-    margin-right: ${({theme}) => theme.space[2]}px;
+    margin-right: ${theme.space[2]}px;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.white};
-    font-size: ${({theme}) => theme.fontSizes.tiny};
+    color: ${theme.colors.white};
+    font-size: ${theme.fontSizes.tiny};
   `,
   StatusBar: styled(Wrapped)`
-    height: ${({theme}) => theme.space[1]}px;
+    height: ${theme.space[1]}px;
     border-radius: 4px;
-    background-color: ${({theme}) => theme.colors.white};
+    background-color: ${theme.colors.white};
   `,
 };
