@@ -3,7 +3,6 @@ import {render, fireEvent} from '@testing-library/react-native';
 import {PokemonDetailsHeader} from '~/components/PokemonDetailsHeader';
 
 const FN = jest.fn();
-3;
 
 jest.mock('axios', () => {
   return {
