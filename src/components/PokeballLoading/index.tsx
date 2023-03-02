@@ -9,7 +9,7 @@ export const PokeballLoading = (props: IPokeballLoading.View) => {
   const animation = useRef(null);
 
   return (
-    <S.Container>
+    <S.Container testID="PokeballLoading">
       <S.Lottie
         autoPlay
         ref={animation}
